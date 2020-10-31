@@ -1,73 +1,99 @@
+/* I kept getting weird margins and paddings, so I started fresh! */
 * {
     margin: 0;
     padding: 0;
 }
 
-body {
-    margin: 15px;
-    padding: 15px;
-    font-family: 'Karla', sans-serif;;
-    text-align: center;
-}
 
-header {
-    font-weight: 400;
-    font-size: 15px;
-}
-
-
-
+/* Fonts: I set these by class */
 .libre {
     font-family: 'Libre Baskerville', serif;
 }
-
 .ocupation {
     font-family: 'Open Sans', sans-serif;
 }
 
-.paragraph {
-    padding: 60px 130px 20px;
+
+/* Setting the font and text-align for the whole document */
+body {
+    font-family: 'Karla', sans-serif;;
+    text-align: center;
 }
 
-h1 {
-    font-size: 5.8rem;
-    font-weight: 700;
-    line-height: 5.7rem;
-}
 
-.about {
-    margin: 20px 20px 20px;
-    line-height: 2rem;
-    font-size: 1.3rem;
-    font-weight: 300;
-    letter-spacing: 1.3px;
+/* Header styling */
+header {
+    margin: 1.25rem;
+    font-weight: 400;
+    font-size: 16px;
 }
-
 ul {
     list-style-type: none;
     margin: 0;
     display: flex;
     justify-content: center;
 }
-
 li {
 
     display: inline-block;
-    padding: 15px 20px;
+    padding: .85rem 1rem;
     letter-spacing: .5px;
 }
+.header-link:link, .header-link:visited {
+    color: gray;
+    text-decoration: none;
+}
+.header-link:hover, .header-link:active {
+    color: black;
+    text-decoration: none;
+}
 
+
+/* The true body!*/ 
+/* This is the meat of the site, the words */
+.paragraph {
+    padding: 60px 10px 20px;
+}
+h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 6rem;
+}
+.about {
+    margin: 15px 15px 15px;
+    line-height: 2.2rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+    letter-spacing: .6px;
+}
+
+/* Styling for the picture grid */
+.main-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*This creates 3 equal columns that shift into 1 when small*/
+    grid-template-rows: auto;
+    gap: 2rem; /*This is the gap between the columns adn rows, not the outter margin!*/
+    justify-content: center;
+    grid-auto-flow: row;
+    margin: 3rem;
+}
+@media only screen and (min-width: 780px) {
+    .paragraph {
+        padding: 60px 130px 20px;
+    }
+    .main-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 .dreamer {
     position: relative;
     overflow: hidden; 
 }
-
 .dreamer img {
-    width: 100%;
+    width: 100%; /*This resets the size of the image, along with the height, some of the images were different sizes*/
     height: 100%;
     transition: .5s ease;
 }
-
 .dreamer > div {
     position: absolute;
     top: 50%;
@@ -76,101 +102,67 @@ li {
     color: white;
     background-color: rgba(18, 18, 19, 0.632);
     transition: .5s ease;
-    backface-visibility: hidden;
-    opacity: 0;
+    opacity: 0; /*Makes the text and gray box disappear*/
     width: 100%;
     height: 100%;
-    text-align: center;
-    padding: 0;
-    margin: 1px, 1px, 1px, 1px;
 }
-
 .center {
     position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 80%;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0;
-    margin: 0;
+    transition: .5s ease;
 }
-
 .name {
-    /* position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     font-size: 2rem;
     padding: 0;
 }
 .occupation {
-    /* position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     font-size: 1rem;
 }
 
+/* Hover Properties! */
 .dreamer:hover img{
     transform: scale(1.1);
-    transition: .5s ease;
+    transition: .5s ease; /*This makes the image a little zoomed*/
+}
+.dreamer:hover > div {
+    opacity: 1; /*Brings the text and gray box into view*/
+    cursor: pointer; /*Pretend link:)*/
+}
+.dreamer:hover .center {
+    bottom: 40%;
+    transition: .5s ease; /*This moves the text up the image*/
 }
 
-.dreamer:hover div {
-    opacity: 1;
-  }
 
-.header-link:link, .header-link:visited {
-    color: gray;
-    text-decoration: none;
-}
-
-.header-link:hover, .header-link:active {
-    color: black;
-    text-decoration: none;
-}
-a:hover, a:active {
-    color: black;
-    text-decoration: none;
-}
-
-.main-section {
-    display: grid;
-    grid-template-columns: repeat(1fr 1fr 1fr);
-    grid-template-rows: auto;
-    gap: 2rem;
-    justify-content: center;
-    grid-auto-flow: row;
-    grid-template-areas: 
-    "image image image";
-    margin: 1.2rem;
-}
-
+/* Footer! */
 footer {
-    margin: 11rem 0 6rem;
+    margin: 11rem 0 7rem;
 }
 h5 {
     font-size: 1.15rem;
     margin: 0 0 5px;
 }
-
 .footer-menu {
     color: #2742e0;
     margin: .5rem;
     text-decoration: none;
-    font-size: .98rem;
+    font-size: 1rem;
     font-weight: 300;
+    letter-spacing: .1px;
 }
-
+a:hover, a:active {
+    color: black;
+    text-decoration: none;
+}
 h6 {
     margin-top: 1.8rem;
     font-weight: 300;
     font-size: .75rem;
 }
-
 h6 > a {
     color: #2742e0;
     text-decoration: none;
 }
-
-
