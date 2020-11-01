@@ -2,6 +2,7 @@
 This project clones an existing webpage: https://www.dreamerstories.com
 
 ![side by side comparison of the two sites](images/side_by_side.png)
+
 The actual site is on the left.
 
 ## Features:
@@ -29,12 +30,15 @@ The actual site is on the left.
     - referencing multiple google fonts in one line on html
 
 ![hover on the menu, text color change](images/hover_2.gif)
+
 Upon hover, the text changes to a darker color.
 
 ![image changes upon hover](images/hover_1.gif)
+
 This shows the hover feature. The image zooms within the box created, gets covered by a low opacity gray box, and the text moves into the center of the image.
 
 ![dynamic screen video: the number of columns shrinks as the screen size shrinks](images/dynamic_site.gif)
+
 This demonstrates the dynamic properties of the site. As the screen size is reduced, the number of columns is also reduced.
 
 
