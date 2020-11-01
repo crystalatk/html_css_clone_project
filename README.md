@@ -53,9 +53,9 @@ This demonstrates the dynamic properties of the site. As the screen size is redu
         ```css
         transform: translate(-50%, -50%)
         ```
-        - to move text up, use transform: 
+        - to move text up, use: 
         ```css
-        translateX(-50%) 
+        transform: translateX(-50%) 
         ```
 - Getting the image to zoom adn preventing the zoomed image from being visable outside of the original box size:
     - on hover, have the image scale up using 
