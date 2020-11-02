@@ -85,4 +85,10 @@ This demonstrates the dynamic properties of the site. As the screen size is redu
         }
 
         ```
+- Getting the text to appear when the image was hovered over (otherwise, the text would not appear until the cursor reached the text container and would diappear when the cursor was not directly on the text container but was still within the image):
+    - I found a way to affect the text while the hover was on the image. This made it access the div within the dreamer class when dreamer was hovered:
+    ```css
+    .dreamer:hover > div {
+    ```
+
 
